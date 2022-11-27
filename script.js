@@ -1,40 +1,37 @@
-// put your globals here - hint: select elements from the HTML
-let textArea= document.getElementById("text-area");
-let countBtn=document.getElementById("countBtn");
-let findWordInput = document.getElementById("findWordInput");
-let findBtn=document.getElementById("findBtn");
 
+const textArea= document.getElementById("text-area");
+const countBtn=document.getElementById("countBtn");
+const findWordInput = document.getElementById("findWordInput");
+const findBtn=document.getElementById("findBtn");
 
-
-// dont' forget to add event listeners to teh buttons
 countBtn.addEventListener("click",function(){
-  let WordsCount = (textArea.value.split(" ")).length;
+  const WordsCount = (textArea.value.split(" ")).length;
   console.log(WordsCount);
   });
 
-  let array=[];
-  let foundWords=[];
+  const array=[];
+  const foundWords=[];
   findBtn.addEventListener("click",function(){
-  array.forEach((each)=>{
-      if(each===findWordInput.value){
-          foundWords.push(each);
+  array.forEach((foundWord)=>{
+      if(foundWord===findWordInput.value){
+          foundWords.push(foundWord);
       }
   });
   });
   console.log(foundWords);
 
-  function printData(){
+function printData(){
     countBtn.addEventListener("click",function(){
-    let WordsCount = (textArea.value.split(" ")).length;
+    const WordsCount = (textArea.value.split(" ")).length;
     console.log(WordsCount);
     });
 
-    let array=[];
-    let foundWords=[];
+    const array=[];
+    const foundWords=[];
     findBtn.addEventListener("click",function(){
-    array.forEach((each)=>{
-        if(each===findWordInput.value){
-            foundWords.push(each);
+    array.forEach((foundWord)=>{
+        if(foundWord===findWordInput.value){
+            foundWords.push(foundWord);
         }
     });
     });
