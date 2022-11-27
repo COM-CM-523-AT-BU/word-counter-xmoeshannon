@@ -1,40 +1,35 @@
-
-const textArea= document.getElementById("text-area");
-const countBtn=document.getElementById("countBtn");
+// put your globals here - hint: select elements from the HTML
+const textArea = document.getElementById("text-area");
+const countBtn = document.getElementById("countBtn");
 const findWordInput = document.getElementById("findWordInput");
-const findBtn=document.getElementById("findBtn");
+const findBtn = document.getElementById("findBtn");
+const wordCountInput = document.getElementById("wordCountInput");
+const wordFoundInput = document.getElementById("wordFoundInput");
 
-countBtn.addEventListener("click",function(){
-  const WordsCount = (textArea.value.split(" ")).length;
-  console.log(WordsCount);
-  });
+// dont' forget to add event listeners to teh buttons
+countBtn.addEventListener("click", countWords);
+findBtn.addEventListener("click", findWords);
 
-  const array=[];
-  const foundWords=[];
-  findBtn.addEventListener("click",function(){
-  array.forEach((foundWord)=>{
-      if(foundWord===findWordInput.value){
-          foundWords.push(foundWord);
-      }
-  });
-  });
-  console.log(foundWords);
-
-function printData(){
-    countBtn.addEventListener("click",function(){
-    const WordsCount = (textArea.value.split(" ")).length;
-    console.log(WordsCount);
-    });
-
-    const array=[];
-    const foundWords=[];
-    findBtn.addEventListener("click",function(){
-    array.forEach((foundWord)=>{
-        if(foundWord===findWordInput.value){
-            foundWords.push(foundWord);
-        }
-    });
-    });
-    console.log(foundWords);
+function countWords() {
+    // your code here
+    // call printData
+    printData(textArea.value.split(" ").length + " words", wordCountInput);
 }
-printData();
+
+function findWords() {
+    // put your local variable for the empty array here
+    // remainder of your code follows
+    // call printData
+    let foundwords = [];
+    foundwords = textArea.value.split(" ").filter(Word => Word === findWordInput.value)
+    console.log(foundwords);
+    printData(foundwords.length + " instances", wordFoundInput);
+}
+
+// change param1 and param2 to identifiers that make sense
+function printData(data, node) {
+    // your code here... one line!
+    node.value = data;
+}
+
+
